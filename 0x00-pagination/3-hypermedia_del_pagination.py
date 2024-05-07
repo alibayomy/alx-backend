@@ -47,7 +47,7 @@ class Server:
         assert index > 0 and page_size > 0 and index is not None
         assert index <= len(self.__indexed_dataset)
         last_index = index + page_size
-        last_index = None if last_index > len(indexed_len) else None
+        last_index = None if last_index > len(indexed_len) else last_index
         data = []
         i = index
         while i < last_index:
