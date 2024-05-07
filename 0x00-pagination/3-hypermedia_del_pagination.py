@@ -45,7 +45,8 @@ class Server:
         assert isinstance(index, int) and isinstance(page_size, int)
         assert index > 0 and page_size > 0
         assert index < len(self.__indexed_dataset)
-        last_index = (index + page_size)  if (index + page_size) < len(self.__indexed_dataset) else None
+        last_index = index + page_size
+        last_index = last_index if last_index < len(self.__indexed_dataset) else None
         data = []
         i = index
         while i < last_index:
