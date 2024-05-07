@@ -5,7 +5,7 @@
 import csv
 import math
 from typing import List
-import os
+
 
 def index_range(page, page_size):
     """
