@@ -13,6 +13,7 @@ def index_range(page, page_size):
         return (0, page_size)
     return (page_size * (page - 1), page * page_size)
 
+
 class Server:
     """Server class to paginate a database of popular baby names.
     """
@@ -34,19 +35,10 @@ class Server:
 
     def get_page(self, page: int = 1, page_size: int = 10) -> List[List]:
         """
-        documentation
+        return the data based on the given page size
         """
         assert page > 0
         assert page_size > 0
-        start_end = index_range(page, page_size)
-        return(self.dataset())
-    
-server = Server()
-
-try:
-    should_err = server.get_page(-10, 2)
-except AssertionError:
-    print("AssertionError raised with negative values")
-print(server.get_page(1, 3))
-print(server.get_page(3, 2))
-print(server.get_page(3000, 100))
+        start, end = index_range(page, page_size)
+        data = self.dataset()
+        return data[start, end]
