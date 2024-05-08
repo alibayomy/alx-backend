@@ -16,7 +16,8 @@ class FIFOCache(BaseCaching):
         assgin item to the cache_dict, remove the
         first in if full
         """
-
+        if key is None or item is None:
+            return
         if len(self.cache_data) >= BaseCaching.MAX_ITEMS:
             keys_list = list(self.cache_data.keys())
             keys_list.sort()
