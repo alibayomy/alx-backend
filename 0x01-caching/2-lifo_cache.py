@@ -4,7 +4,7 @@
 BaseCaching = __import__('base_caching').BaseCaching
 
 
-class LIFOCcache(BaseCaching):
+class LIFOCache(BaseCaching):
     """ LIFO Cache
     Store caching by LIFO algorithm
     """
