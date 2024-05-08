@@ -15,7 +15,7 @@ class LRUCache(BaseCaching):
     def put(self, key, item):
         """
         assgin item to the cache_dict, remove the
-        first in if full
+        the least recently used in if full
         """
         if key is None or item is None:
             return
@@ -34,7 +34,8 @@ class LRUCache(BaseCaching):
     def get(self, key):
         """
         Return the value of cache dict based on
-            the given key
+            the given key and update the key_list
+            to record the least recently used
         """
         if key is None or key not in self.cache_data.keys():
             return None
